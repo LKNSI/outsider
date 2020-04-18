@@ -3,10 +3,10 @@ Niche LinkedIn tools that no one asked for. Useful, but sprinkled with memes.
 
 ## Initalize
 
-``javascript
+```javascript
 const prototype = require('outsider')
 const outsider = new prototype.outsider({authToken: <token>})
-``
+```
 
 
 ## Feature: ILYDB (I love you dude, but...)
