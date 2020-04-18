@@ -21,7 +21,7 @@ outsider.ilydb()
 
 ## Feature: 'Thinking Emoji'
 
-Find out what a breakdown of what who and what posts are being displayed in your feed.
+Find out a breakdown of what who and what posts are being displayed in your feed.
 
 ```javascript
 outsider.hmmm()
