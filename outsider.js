@@ -88,7 +88,7 @@ switch(requiredRuns){
 }
 
 ////
-
+/*
 var ctl = data.included.length
 var ctf = []
 var ctr = data.included
@@ -100,3 +100,4 @@ for(i = 0; i < ctl; i++){
 }
 console.log("CL: " +ctf.length)
 fs.writeFileSync('extracted.json',JSON.stringify(ctf))
+*/
