@@ -1,5 +1,5 @@
 # Outsider
-Niche LinkedIn tools that no one asked for. Useful, but sprinkled with memes.
+Niche LinkedIn tools that no one asked for. Useful, but sprinkled with memes. Lots. Of. Memes.
 
 ## Initalize
 
