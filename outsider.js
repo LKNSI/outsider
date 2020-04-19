@@ -1,6 +1,8 @@
 const path = require('path')
 const data = require('./testdata.json')
 const fs = require('fs')
+const axios = require('axios')
+const puppeteer = require('puppeteer');
 
 ////
 /*
@@ -33,11 +35,52 @@ const fs = require('fs')
 ////
 
 
+const skilledInMicrosoftOffice = {
+	requiredRuns: null,
+	runStore:{
 
-const profitHunter = async() => {
+	}
+}
+
+const seekingMOTIVATEDcandidate = async(nsync) => {
+	return new Promise(async(resolve,reject) =>{
+		/*axios.get("https://www.linkedin.com/checkpoint/lg/login-submit",{},{headers:{
+
+		}})*/
+		const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
+		const page = await browser.newPage();
+		await page.goto("https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin", {waitUntil: 'networkidle2'})
+		var compare_success_a = page.url();
+
+		await page.waitForSelector("[name='username']");
+		await page.type("[name='username']", nsync.username);
+		await page.keyboard.press('Tab',{delay: 166});
+		await page.keyboard.type(nsync.password, {delay: 167});
+		await page.keyboard.press('Tab',{delay: 402});
+		await page.keyboard.press('Tab',{delay: 245});
+		await page.keyboard.press('Tab',{delay: 194});
+		await page.keyboard.press('Tab',{delay: 170});
+		await page.keyboard.press('Enter');
+
+		var compare_success_b = page.url();
+		if (compare_success_a == compare_success_b) {
+			console.error("Incorrect Password");
+			await browser.close();
+		  	reject();
+		}
+		var dh = page.response.headers()
+		resolve(dh);
+
+	})
+}
+
+
+
+
+const profitHunter = async(nsync) => {
 	return new Promise((resolve,reject) => {
 		try{
-			var total = data.data.paging.total
+			var total = nsync.data.paging.total
 			var modulus = total / 100 % 1 * 100
 			var requiredRuns = null;
 			if(modulus === 0){
@@ -53,11 +96,11 @@ const profitHunter = async() => {
 	})
 }
 
-const keyPerformanceIndicators = async() => {
+const keyPerformanceIndicators = async(nsync) => {
 	return new Promise((resolve,reject) => {
 		try{
-			var ctl = data.included.length
-			var ctr = data.included		
+			var ctl = nsync.included.length
+			var ctr = nsync.included		
 			var ctf = []	
 			for(i = 0; i < ctl; i++){
 				if(typeof ctr[i].firstName !== "undefined"){
@@ -72,10 +115,16 @@ const keyPerformanceIndicators = async() => {
 	})	
 }
 
-profitHunter()
-.then(keyPerformanceIndicators())
+//profitHunter(data)
+
+
+seekingMOTIVATEDcandidate()
 .then(k => console.log(k))
 .catch(k => console.log(k))
+
+//.then(k => keyPerformanceIndicators(data))
+//.then(k => console.log(k))
+//.catch(k => console.log(k))
 
 
 
