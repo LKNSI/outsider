@@ -5,10 +5,31 @@ const fs = require('fs')
 console.log("TL: " + data.included.length)
 
 ////
+
 var total = data.data.paging.total
 var modulus = total / 100 % 1 * 100
-console.log({Total: total, Modulus: Math.floor(modulus), RequiredRuns: (((total-modulus) / 100))+1})
+var requiredRuns = null;
+if(modulus === 0){
+	requiredRuns = total / 100
+}else if(modulus !== 0){
+	requiredRuns = ((total-modulus)/100)+1
+}
+switch(requiredRuns){
+	case 0:{
+
+		break;
+	}
+	default :{
+			
+
+
+
+		break;
+	}
+}
+
 ////
+
 var ctl = data.included.length
 var ctf = []
 var ctr = data.included
