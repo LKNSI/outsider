@@ -5,7 +5,8 @@ const fs = require('fs')
 ////
 /*
 
-	// I honestly respect process improvement, but I do believe that it's been commercialized to the point where it's like Rich-Dad Poor-Dad. It's just selling a dream now. Process improvement involves looking within, not to some agency to give you a certificate.
+	// I honestly respect process improvement, but I do believe that it's been commercialized to the point where it's like Rich-Dad Poor-Dad. 
+	// It's just selling a dream now. Process improvement involves looking within, not to some agency to give you a certificate.
 	//
 	// The fact that these jokes can cause disruptive feelings is truth enough of an emotional connection to the idea, rather than the idea standing on its own merits.
 
@@ -56,36 +57,28 @@ const keyPerformanceIndicators = async() => {
 	return new Promise((resolve,reject) => {
 		try{
 			var ctl = data.included.length
-			var ctf = []
-			var ctr = data.included			
+			var ctr = data.included		
+			var ctf = []	
 			for(i = 0; i < ctl; i++){
 				if(typeof ctr[i].firstName !== "undefined"){
 					let key = ""+ctr[i].firstName+""+ctr[i].lastName
 					ctf.push(key)
 				}
 			}
+			resolve(ctf)
 		}catch(err){
-
+			reject(err)
 		}		
 	})	
 }
 
+profitHunter()
+.then(keyPerformanceIndicators())
+.then(k => console.log(k))
+.catch(k => console.log(k))
 
 
 
-switch(requiredRuns){
-	case 0:{
-
-		break;
-	}
-	default :{
-
-
-
-
-		break;
-	}
-}
 
 ////
 /*
