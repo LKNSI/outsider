@@ -1,0 +1,21 @@
+{
+  "name": "outsider",
+  "version": "1.0.0",
+  "description": "Niche LinkedIn tools that no one asked for. Useful, but sprinkled with memes. Lots. Of. Memes.",
+  "main": "outsider.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LKNSI/outsider.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LKNSI/outsider/issues"
+  },
+  "homepage": "https://github.com/LKNSI/outsider#readme"
+}
