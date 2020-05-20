@@ -54,7 +54,7 @@ const profitHunter = async(nsync) => {
 		try{
 			var total = nsync.data.paging.total
 			var modulus = total / 100 % 1 * 100
-			var requiredRuns = null;
+			var requiredRuns = 0;
 			if(modulus === 0){
 				requiredRuns = total / 100
 				resolve(requiredRuns)
