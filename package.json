@@ -4,7 +4,7 @@
   "description": "Niche LinkedIn tools that no one asked for. Useful, but sprinkled with memes. Lots. Of. Memes.",
   "main": "outsider.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "puppeteer": "^3.0.0"
   },
   "devDependencies": {},
